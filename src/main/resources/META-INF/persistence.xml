@@ -13,19 +13,11 @@
             <property name="javax.persistence.jdbc.url"
                       value="jdbc:postgresql://localhost:5432/PROXYBANK_GS" />
             <property name="javax.persistence.jdbc.user" value="postgres" />
-            <property name="javax.persistence.jdbc.password" value="sql" />
-
-
-            <!-- <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/simpleentityJPA" />
-            <property name="jakarta.persistence.jdbc.user" value="sql" />
-            <property name="jakarta.persistence.jdbc.password" value="sql" /> -->
+            <property name="javax.persistence.jdbc.password" value="1234" />
 
             <!-- SQL dialect -->
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-            <!-- SQL dialect -->
-            <!--			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />-->
 
             <!-- Create/update tables automatically using mapping metadata -->
             <property name="hibernate.hbm2ddl.auto" value="update" />

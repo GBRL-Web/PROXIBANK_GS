@@ -1,25 +1,23 @@
 package persistence;
 
-import service.Client;
+import service.Compte;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-public class ClientDAO {
-    public ClientDAO() {
-    }
+public class CompteDAO {
 
+    public void compteDAO() {}
     EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu");
     EntityManager em = emf.createEntityManager();
     EntityTransaction txn = em.getTransaction();
-
-    public void create(Client client) {
+    public void create(Compte compte) {
         try {
             txn.begin();
-            em.persist(client);
-            System.out.println("Créer client");
+            em.persist(compte);
+            System.out.println("Créer compte");
 
             txn.commit();
         } catch (Exception e) {
@@ -35,15 +33,14 @@ public class ClientDAO {
                 emf.close();
             }
         }
-
     }
 
     public void delete(int id) {
         try {
             txn.begin();
-            Client client = em.find(Client.class, id);
-            em.remove(client);
-            System.out.println(client);
+            Compte compte = em.find(Compte.class, id);
+            em.remove(compte);
+            System.out.println(compte);
             txn.commit();
         } catch (Exception e) {
             if (txn != null) {
@@ -61,11 +58,11 @@ public class ClientDAO {
 
     }
 
-    public void update(Client client) {
+    public void update(Compte compte) {
         try {
             txn.begin();
-            em.merge(client);
-            System.out.println("Le client a été modifié avec succès");
+            em.merge(compte);
+            System.out.println("Le compte a été modifié avec succès");
             txn.commit();
         } catch (Exception e) {
             if (txn != null) {
@@ -84,12 +81,12 @@ public class ClientDAO {
 
     }
 
-    public Client read(int id) {
-        Client clientFind = null;
+    public Compte read(int id) {
+        Compte compteFind = null;
         try {
             txn.begin();
-            clientFind = em.find(Client.class, id);
-            System.out.println(clientFind);
+            compteFind = em.find(Compte.class, id);
+            System.out.println(compteFind);
 
             txn.commit();
 
@@ -108,10 +105,6 @@ public class ClientDAO {
 
         }
 
-        return clientFind;
+        return compteFind;
     }
 }
-
-
-
-
